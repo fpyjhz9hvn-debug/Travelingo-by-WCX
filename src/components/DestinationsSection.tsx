@@ -83,7 +83,8 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
     const el = scrollContainerRef.current;
     if (!el) return;
     const firstCard = el.children[0] as HTMLElement | undefined;
-    const step = firstCard ? firstCard.offsetWidth + 32 : 460;
+    const columnGap = parseFloat(window.getComputedStyle(el).columnGap) || 32;
+    const step = firstCard ? firstCard.offsetWidth + columnGap : 460;
     el.scrollBy({
       left: direction === 'left' ? -step : step,
       behavior: 'smooth',
@@ -168,16 +169,16 @@ export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
           </div>
         </motion.div>
 
-        {/* Horizontal Scrollable Country Cards Track */}
+        {/* Horizontal Scrollable 7x2 Country Cards Grid */}
         <div
           ref={scrollContainerRef}
           onScroll={updateScrollButtons}
-          className="relative flex items-stretch gap-6 sm:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2"
+          className="relative grid grid-rows-2 grid-flow-col auto-cols-[85vw] sm:auto-cols-[360px] md:auto-cols-[440px] lg:auto-cols-[470px] auto-rows-fr gap-6 sm:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2"
         >
           {filteredDestinations.map((dest) => (
             <div
               key={dest.id}
-              className="w-[85vw] sm:w-[360px] md:w-[440px] lg:w-[470px] shrink-0 snap-start group rounded-3xl overflow-hidden border border-[#E5E2D8] bg-[#FAF9F5] shadow-xs hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:border-black/30 transition-all duration-300 flex flex-col justify-between"
+              className="h-full snap-start group rounded-3xl overflow-hidden border border-[#E5E2D8] bg-[#FAF9F5] shadow-xs hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] hover:border-black/30 transition-all duration-300 flex flex-col justify-between"
             >
               {/* Image with Region badge & Rating */}
               <div
