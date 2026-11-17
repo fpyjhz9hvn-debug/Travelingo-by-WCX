@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>TravFrick - Explore The World With TravFrick</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#F9F8F3',
+              dark: '#111111',
+              charcoal: '#1A1A1A',
+              muted: '#666666',
+              border: '#E8E6DF'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #FAFAFA;
+      color: #121212;
+      overflow-x: hidden;
+    }
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: -0.02em;
+    }
+  </style>
+<style data-purpose="animations">
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 22s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#faf9f5] text-brand-dark antialiased selection:bg-black selection:text-white">
+<!-- BEGIN: TopHeader -->
+<header class="sticky top-0 z-50 bg-[#faf9f5]/90 backdrop-blur-md border-b border-[#ece9df] transition-all duration-300">
+<div class="max-w-md mx-auto px-5 py-4 flex items-center justify-between">
+<!-- Brand Logo -->
+<a aria-label="TravFrick Home" class="flex items-center space-x-1.5 focus:outline-none" href="#">
+<span class="brand-title font-extrabold text-2xl tracking-tight text-black">TRAVFRICK</span>
+</a>
+<!-- Mobile Action & Drawer Toggle -->
+<div class="flex items-center space-x-3">
+<a class="text-xs font-semibold px-3.5 py-2 bg-black text-white rounded-full hover:bg-neutral-800 transition active:scale-95 shadow-sm" href="#booking">
+          Book Now
+        </a>
+<button aria-label="Toggle Navigation Menu" class="p-2 text-neutral-800 rounded-lg hover:bg-neutral-200/50 active:scale-95 transition" id="menu-btn">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 12h16m-7 6h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Mobile Slide-down Navigation Panel -->
+<nav class="hidden max-w-md mx-auto px-6 py-5 bg-white border-b border-neutral-200 shadow-xl transition-all duration-300" id="mobile-nav">
+<ul class="flex flex-col space-y-4 text-base font-semibold text-neutral-800">
+<li><a class="block hover:text-black py-1" href="#">Home</a></li>
+<li><a class="block hover:text-black py-1" href="#about">About Us</a></li>
+<li><a class="block hover:text-black py-1" href="#services">Services</a></li>
+<li><a class="block hover:text-black py-1" href="#destinations">Destinations</a></li>
+<li><a class="block hover:text-black py-1" href="#testimonials">Reviews</a></li>
+<li><a class="block hover:text-black py-1" href="#faq">FAQ</a></li>
+<li><a class="block hover:text-black py-1" href="#blog">Blog</a></li>
+</ul>
+</nav>
+</header>
+<!-- END: TopHeader -->
+<main class="max-w-md mx-auto overflow-hidden">
+<!-- BEGIN: HeroSection -->
+<section class="pt-8 pb-12 px-5 text-center relative overflow-hidden">
+<!-- Main Headlines -->
+<div class="space-y-4">
+<h1 class="brand-title text-4xl sm:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.15]">
+          Explore The World With TravFrick
+        </h1>
+<p class="text-neutral-600 text-sm sm:text-base leading-relaxed max-w-xs mx-auto">
+          Embark on the adventure of a lifetime with our personalized travel packages tailored to your needs and dreams.
+        </p>
+</div>
+<!-- Hero Call-to-action Button -->
+<div class="mt-7">
+<a class="inline-flex items-center justify-center px-7 py-3.5 bg-black text-white text-sm font-semibold rounded-full shadow-lg hover:bg-neutral-800 active:scale-95 transition-all duration-200" href="#services">
+          Start Your Journey
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</a>
+</div>
+<!-- Social Proof / Customer Rating Pile -->
+<div class="mt-7 inline-flex flex-col items-center justify-center">
+<div class="flex items-center space-x-2">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Customer avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpjoRHCeKigWoi5ecaV9JgO_Rclo8OiifagawKSStpeJRECstXEmwJgolpUni234JOZao4mYrZd15R6KP0sfSZ3kSFMMZDt2NhiUmbMqbUFd_4RAgAcCyKl4xybjArEJMjygdTh5JMrmpL38sNivG8hR47MQKlBMOT_w1SGGgVGgdl2cgGLuVCt2_ckRGyIjVJ7A_FcVn_YVXL0JW_TAz_bDbw0deUDxWBe49i5g"/>
+<img alt="Customer avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBYhiAlte7sch-tRblMYlRf2r9AbDyZtm2VzI45dYeUjr-kZ40btO5bOT49eZ0qVK3YMY_mcfF0rqNgu0BsBMSicR_ca9sK9zHq8zVNbUyLFIfpqtNFSlIcHAM5Q1KjnHv_NtuiFTCVyFr-4DOUYzs00B5TXXoR8JNe7jgR76r0un-58-huFGCTxyHYLGHosJvty8_PAj8HdFdxvjizVY9YJh2fedZIckvZZLxWA"/>
+<img alt="Customer avatar" class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoPfQejAOZ---2_omYAVihbuKptFC087sos7EWmRR4g3oP-NPzOsymI4Y3V71Jp946Uc6MzrFEBp7q391C6z8uX_cft5Z-xOoPRtM49px4c77mVt89pIpEwLKrr-xu-_phCUvVb1_43LXO_NsuSazPVkUWIk9NlzLB9jHMI-ekfWqgeaKZcO56mIdFYgfPEs9eV1gHOqUqDHdPaCQ5VjdW3OfesEgzTAaOmrtf-Q"/>
+</div>
+<div class="flex flex-col items-start text-left">
+<div class="flex text-amber-500">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<span class="text-[11px] font-medium text-neutral-700">38,456 Happy Customers.</span>
+</div>
+</div>
+</div>
+<!-- Cutout Family Hero Image -->
+<div class="mt-8 relative flex justify-center">
+<img alt="Family traveling with colorful luggage" class="w-full max-w-[340px] h-auto object-contain drop-shadow-2xl transition duration-500 hover:scale-[1.02]" loading="eager" src="https://lh3.googleusercontent.com/aida/AEtjO1VYfTII9-nSNHaT4Abz05hBOYlJLtzwdcKo-6NMHtWxgw7J5jWjQ_TEsE781waoI0mzHY5-XMJn_Qlek_e-cK6MwR7NP8_AvP_ihDOrvP5avWOkvDiXP8MlQ5XiBNCT5VbJn0wf2jpu-7f7IDY7Fwa__DhDTSXMklDT532NxznSIsL0s41ayY694ofjSUczkWIlASo3KJWEiXCpRcO7FZdxKLXTZfk6vnrwz5Mfng"/>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: TrustedByLogos -->
+<section class="py-7 border-y border-[#ece8dc] bg-[#f5f3ea] overflow-hidden" data-purpose="partners-ticker">
+<p class="text-center text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-4">Trusted By Leading Travel Pioneers</p>
+<div class="relative w-full overflow-hidden flex items-center">
+<div class="animate-marquee whitespace-nowrap flex space-x-12 items-center text-neutral-400 font-bold text-sm tracking-widest">
+<span class="flex items-center gap-1.5"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg> TRIPADVISOR</span>
+<span class="flex items-center gap-1.5"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> EXPEDIA</span>
+<span class="flex items-center gap-1.5"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg> BOOKING.COM</span>
+<span class="flex items-center gap-1.5"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> AIRBNB</span>
+<!-- Duplicate items for seamless continuous ticker -->
+<span class="flex items-center gap-1.5"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path></svg> TRIPADVISOR</span>
+<span class="flex items-center gap-1.5"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg> EXPEDIA</span>
+<span class="flex items-center gap-1.5"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle></svg> BOOKING.COM</span>
+<span class="flex items-center gap-1.5"><svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg> AIRBNB</span>
+</div>
+</div>
+</section>
+<!-- END: TrustedByLogos -->
+<!-- BEGIN: WhoWeAreSection -->
+<section class="py-14 px-5 bg-[#faf9f5]" data-purpose="about-section" id="about">
+<div class="text-center space-y-4">
+<span class="inline-block text-xs font-semibold tracking-wide text-neutral-500 uppercase">
+          Who We Are And Why We Love Travel
+        </span>
+<h2 class="brand-title text-2xl sm:text-3xl font-bold tracking-tight text-neutral-900 leading-snug">
+          Passionate Planners Helping Travelers Explore The World Their Way
+        </h2>
+<p class="text-neutral-600 text-sm leading-relaxed max-w-sm mx-auto">
+          At TravFrick, we are dedicated to making your travel dreams come true with tailored itineraries, excellent service, and unforgettable experiences.
+        </p>
+<div class="pt-2">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-black text-white text-xs font-semibold rounded-full hover:bg-neutral-800 active:scale-95 transition shadow-sm" href="#services">
+            Learn More About Us
+          </a>
+</div>
+</div>
+<!-- Feature Group Photo -->
+<div class="mt-8 rounded-2xl overflow-hidden shadow-lg border border-neutral-200/60 group">
+<img alt="Happy travelers taking selfie in lush green nature" class="w-full h-56 sm:h-64 object-cover object-center group-hover:scale-105 transition duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1X7BY9vcS6bmXsgHHkvUAMV0iSoqOlCVz7MdvR8qQypAU5bbSdBPdkoYaoxPHOR8LSjqv_D3LA7_73-V6LBsm7TOmnN3HmVHQtZzb93DkVikbsup22t4cxbL_Ab-FT18KUxOsd_9D6BHMEYEkcqP63pG5APv8GGcFhlM5ec31Krv2vibzipzb8eHVNihp3C5RNo9bUPZ9QzWtTwmj77t9tt_O3PHPfMzHlDKpeqew"/>
+</div>
+</section>
+<!-- END: WhoWeAreSection -->
+<!-- BEGIN: ServicesSection -->
+<section class="py-14 px-5 bg-white border-t border-[#f0ece1]" data-purpose="services-grid" id="services">
+<div class="text-center space-y-3 mb-10">
+<span class="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+          Our Travel Services Tailored To Every Journey
+        </span>
+<h2 class="brand-title text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight leading-snug">
+          Everything You Need For Seamless Travel Planning And Booking
+        </h2>
+<p class="text-neutral-600 text-xs sm:text-sm max-w-xs mx-auto">
+          Whether you're looking for a luxury getaway or a budget-friendly trip, we provide services that suit every traveler.
+        </p>
+</div>
+<!-- Services Cards List -->
+<div class="space-y-4">
+<!-- Service 1 -->
+<div class="p-6 bg-[#faf9f5] rounded-2xl border border-neutral-200/70 text-center hover:border-black/30 transition duration-300">
+<div class="w-12 h-12 mx-auto mb-3 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800">
+<svg class="w-6 h-6 stroke-current" fill="none" viewbox="0 0 24 24"><path d="M9 20l-5.447-2.724A2 2 0 013 15.488V5.512a2 2 0 011.553-1.956L9 2m0 18l6 3m-6-3V2m6 21l5.447-2.724A2 2 0 0021 18.488V8.512a2 2 0 00-1.553-1.956L15 5m0 18V5m0 0L9 2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="font-bold text-base text-neutral-900 mb-1.5">Custom Trip Planning</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Tailor-made itineraries based on your interests, budget, and schedule.</p>
+</div>
+<!-- Service 2 -->
+<div class="p-6 bg-[#faf9f5] rounded-2xl border border-neutral-200/70 text-center hover:border-black/30 transition duration-300">
+<div class="w-12 h-12 mx-auto mb-3 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800">
+<svg class="w-6 h-6 stroke-current" fill="none" viewbox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="font-bold text-base text-neutral-900 mb-1.5">Hotel &amp; Stay Booking</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Get the best rates on handpicked stays from cozy escapes to ultimate luxury.</p>
+</div>
+<!-- Service 3 -->
+<div class="p-6 bg-[#faf9f5] rounded-2xl border border-neutral-200/70 text-center hover:border-black/30 transition duration-300">
+<div class="w-12 h-12 mx-auto mb-3 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800">
+<svg class="w-6 h-6 stroke-current" fill="none" viewbox="0 0 24 24"><path d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="font-bold text-base text-neutral-900 mb-1.5">Flight Booking Assistance</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Book affordable flights with flexible options and optimal route suggestions.</p>
+</div>
+<!-- Service 4 -->
+<div class="p-6 bg-[#faf9f5] rounded-2xl border border-neutral-200/70 text-center hover:border-black/30 transition duration-300">
+<div class="w-12 h-12 mx-auto mb-3 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800">
+<svg class="w-6 h-6 stroke-current" fill="none" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="font-bold text-base text-neutral-900 mb-1.5">Travel Insurance Coverage</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Secure your trip with comprehensive protection options tailored for peace of mind.</p>
+</div>
+<!-- Service 5 -->
+<div class="p-6 bg-[#faf9f5] rounded-2xl border border-neutral-200/70 text-center hover:border-black/30 transition duration-300">
+<div class="w-12 h-12 mx-auto mb-3 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800">
+<svg class="w-6 h-6 stroke-current" fill="none" viewbox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="font-bold text-base text-neutral-900 mb-1.5">Guided Tours &amp; Activities</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Choose from verified cultural tours, adrenaline adventure sports, or offbeat spots.</p>
+</div>
+<!-- Service 6 -->
+<div class="p-6 bg-[#faf9f5] rounded-2xl border border-neutral-200/70 text-center hover:border-black/30 transition duration-300">
+<div class="w-12 h-12 mx-auto mb-3 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800">
+<svg class="w-6 h-6 stroke-current" fill="none" viewbox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</div>
+<h3 class="font-bold text-base text-neutral-900 mb-1.5">24/7 Support Line</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Real human assistance, anytime you need instant guidance before or during travel.</p>
+</div>
+</div>
+<!-- Services CTA -->
+<div class="mt-8 text-center">
+<a class="inline-flex items-center justify-center px-7 py-3.5 bg-black text-white text-xs font-semibold rounded-full hover:bg-neutral-800 active:scale-95 transition" href="#booking">
+          Explore Our Services
+        </a>
+</div>
+</section>
+<!-- END: ServicesSection -->
+<!-- BEGIN: MountainCalloutBanner -->
+<section class="relative my-6 mx-4 rounded-3xl overflow-hidden shadow-2xl text-white text-center py-16 px-6" id="booking">
+<img alt="Backpacker looking at expansive mountain vistas" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.55]" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1XTRQmUrptMvG1l5nzxuvkRdF37NXy7TYIp2fgAGoYeLed0c3QNupBlG9sKGnM1MXC1xwcZnLOaAsmfkyf52BYLMxa6zrLF0btQ5InehcO4_wg4HlJJcBZh7zTxs9Cp0JCCWJWDYQjlUNoACAtgStA29QW8aeu-7rowWl7wBO61hvtfKYYvc2_kOr06CzEoygveyNNNRysFWdSNnq-I5bQ1ZnZkXDdG1Iq8GzqYag"/>
+<div class="relative z-10 max-w-xs mx-auto space-y-3">
+<span class="text-[11px] font-semibold tracking-wider uppercase text-neutral-300">
+          Let Us Take You There
+        </span>
+<h2 class="brand-title text-3xl font-bold leading-tight">
+          Ready For Your Next Adventure?
+        </h2>
+<p class="text-neutral-300 text-xs leading-relaxed">
+          Join the thousands of happy travelers who have booked their dream vacations with us.
+        </p>
+<div class="pt-3">
+<a class="inline-block px-7 py-3 bg-white text-neutral-900 text-xs font-bold rounded-full shadow-md hover:bg-neutral-100 active:scale-95 transition" href="#">
+            Book Your Trip Now
+          </a>
+</div>
+</div>
+</section>
+<!-- END: MountainCalloutBanner -->
+<!-- BEGIN: HowItWorksSection -->
+<section class="py-14 px-5 bg-[#faf9f5]" data-purpose="process-steps">
+<div class="text-center space-y-3 mb-10">
+<span class="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+          How We Make Your Travel Dreams Come True
+        </span>
+<h2 class="brand-title text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight leading-snug">
+          Our Simple Step-By-Step Process For Booking Perfect Trips
+        </h2>
+<p class="text-neutral-600 text-xs leading-relaxed max-w-xs mx-auto">
+          From planning to booking, our simple steps ensure your dream trip is just a few clicks away.
+        </p>
+</div>
+<!-- Process Steps List -->
+<div class="space-y-4">
+<!-- Step 1 -->
+<div class="p-6 bg-white rounded-2xl border border-neutral-200/70 shadow-sm flex flex-col items-center text-center">
+<span class="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center font-bold text-sm mb-3">1</span>
+<h3 class="font-bold text-base text-neutral-900 mb-1">Tell Us Your Travel Dream</h3>
+<p class="text-neutral-600 text-xs">Share your destination, preferred travel dates, wishlist, and budget.</p>
+</div>
+<!-- Step 2 -->
+<div class="p-6 bg-white rounded-2xl border border-neutral-200/70 shadow-sm flex flex-col items-center text-center">
+<span class="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center font-bold text-sm mb-3">2</span>
+<h3 class="font-bold text-base text-neutral-900 mb-1">We Plan Your Itinerary</h3>
+<p class="text-neutral-600 text-xs">Our experienced destination curators craft a custom itinerary tailored just for you.</p>
+</div>
+<!-- Step 3 -->
+<div class="p-6 bg-white rounded-2xl border border-neutral-200/70 shadow-sm flex flex-col items-center text-center">
+<span class="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center font-bold text-sm mb-3">3</span>
+<h3 class="font-bold text-base text-neutral-900 mb-1">You Approve &amp; Book</h3>
+<p class="text-neutral-600 text-xs">Review the plan, request personal revisions, or confirm and book everything smoothly.</p>
+</div>
+<!-- Step 4 -->
+<div class="p-6 bg-white rounded-2xl border border-neutral-200/70 shadow-sm flex flex-col items-center text-center">
+<span class="w-10 h-10 bg-black text-white rounded-xl flex items-center justify-center font-bold text-sm mb-3">4</span>
+<h3 class="font-bold text-base text-neutral-900 mb-1">Enjoy Your Trip!</h3>
+<p class="text-neutral-600 text-xs">Pack your bags and travel with peace of mind — we've got your back around the clock.</p>
+</div>
+</div>
+</section>
+<!-- END: HowItWorksSection -->
+<!-- BEGIN: HandpickedDestinations -->
+<section class="py-14 px-5 bg-white border-t border-[#f0ece1]" data-purpose="trending-destinations" id="destinations">
+<div class="text-center space-y-3 mb-9">
+<span class="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+          Most Loved Travel Spots By Our Happy Travelers
+        </span>
+<h2 class="brand-title text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight leading-snug">
+          Handpicked Destinations That Are Trending Around The Globe
+        </h2>
+<p class="text-neutral-600 text-xs max-w-xs mx-auto">
+          Explore some of the most popular travel destinations that our clients are loving right now.
+        </p>
+</div>
+<!-- Destination Cards -->
+<div class="space-y-6">
+<!-- Morocco -->
+<div class="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-[#faf9f5]">
+<div class="h-48 overflow-hidden">
+<img alt="Marrakech architecture and reflecting pool" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1U21aXncOiXopFfr9KOKqj6znpUEuwfOYo2JSMFXJo_OIf9ClvbSdxBor9JeKIosH5LK6DaVygdbs5qC3NW6mItMxEQXOB-pyXGWK210ZAmabCUXcKSHx8WH4j7hf3rVNUUh8A1a15daCU4MCLqPr0mO4NO0HPYivZekM2mGwmVOnYkEfkDso0tdqahb9vnuvy3dPXTGxPl9ruwWpQg-FMDpfzlFDxUG_Nwp3qfhA"/>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg text-neutral-900 mb-1">Marrakech, Morocco</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Immerse yourself in Moroccan charm with historic architecture, vibrant souks, and warm desert sunsets.</p>
+</div>
+</div>
+<!-- Banff, Canada -->
+<div class="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-[#faf9f5]">
+<div class="h-48 overflow-hidden">
+<img alt="Banff Lake with mountains and moose" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1UFQxEY8hZLPCSDiwrGMHxAti7aHoKarsrJByosUE5F5yKRQDZeDBrg1dP8VkVC8g4PoSY0IiiRm-EOSpKDLe7Erz-gPspysOb7Nc_xpa6hlZAov6FWFb2jGGF4Nw9l4XV-Ui7S8BCqsiimiYbvejxRVd5m6QYbTtnkZOgitLlV0RDqiOhl563XhpBkc3aqUWD27Ys_q7EFuNU6gl7SNsFaQPccIaA4UyS3NPq6RR0"/>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg text-neutral-900 mb-1">Banff National Park, Canada</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Experience breathtaking emerald lakes, towering Canadian Rockies, and iconic wildlife corridors.</p>
+</div>
+</div>
+<!-- Paris, France -->
+<div class="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-[#faf9f5]">
+<div class="h-48 overflow-hidden">
+<img alt="Eiffel Tower sunset silhouette" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1XRFOQQV2ygCo48trH4aNk_WyDAbWjlRRBaF3MGofmFlqy1X4zYFU02kpAJ9U6cWMMsFcCdzTaxUb3gQdE5NvjdyARMSL_EnD49xFwwJ2r2CE603Gw-2AV5ApmfjhhzLsiwXjLPnPrGfvzmkvehzsqBv84fsXEKqBJOJYloGAxIRBR6FlTkGa1is6wBrxSrvKrvxG9HESSoodM8OnN_KCg3ts4I4eXZkvLxVyfZWwA"/>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg text-neutral-900 mb-1">Paris, France</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Fall in love with the timeless romance, world-class art museums, and charming bistros of the French capital.</p>
+</div>
+</div>
+<!-- Bali, Indonesia -->
+<div class="rounded-2xl overflow-hidden border border-neutral-200 shadow-sm bg-[#faf9f5]">
+<div class="h-48 overflow-hidden">
+<img alt="Bali coastal beach bungalow" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1XF5pzqHXg5Ci86WbeT34NKML_ApQ3PQdL_JlyaBsmWTNXtPrvJGpW-uMbsyqyAqf7G4b_fs14Wfw1RziKs8BFDiarQeaBcyGxi6gdtfVZ8hyun7I4KMoi-V0dW-YijHW_wdghcXnjkT2Fje0-aTk-HpElf8n8SfEbyB1ccCiWw84T4vaGyRJ-36pyWqcAvjwkTNxdycYpdZNlbsmIKQYumtCkFdUAhzz-ynDveidQ"/>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-lg text-neutral-900 mb-1">Bali, Indonesia</h3>
+<p class="text-neutral-600 text-xs leading-relaxed">Discover cliffside views, turquoise ocean swells, sacred sanctuaries, and tranquil tropical villas.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: HandpickedDestinations -->
+<!-- BEGIN: TestimonialsSection -->
+<section class="py-14 px-5 bg-[#faf9f5]" data-purpose="customer-reviews" id="testimonials">
+<div class="text-center space-y-3 mb-8">
+<span class="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+          What Our Travelers Are Saying About Us
+        </span>
+<h2 class="brand-title text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight leading-snug">
+          Reviews And Feedback From Real TravFrick Clients
+        </h2>
+</div>
+<!-- Testimonial Cards Carousel / Stack -->
+<div class="space-y-4">
+<div class="p-6 bg-white rounded-2xl border border-neutral-200 shadow-sm">
+<div class="flex text-amber-500 mb-3 text-sm">
+            ★★★★★
+          </div>
+<p class="text-neutral-800 text-sm leading-relaxed italic mb-4">
+            “TravFrick made planning our honeymoon the easiest part of getting married. From cozy resorts to an unforgettable surprise sunset cruise, it felt totally effortless.”
+          </p>
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-neutral-200 flex items-center justify-center font-bold text-xs text-neutral-700">RF</div>
+<div>
+<p class="text-xs font-bold text-neutral-900">Robert Fox</p>
+<p class="text-[11px] text-neutral-500">Honeymoon in Amalfi Coast</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-white rounded-2xl border border-neutral-200 shadow-sm">
+<div class="flex text-amber-500 mb-3 text-sm">
+            ★★★★★
+          </div>
+<p class="text-neutral-800 text-sm leading-relaxed italic mb-4">
+            “They took our vague travel idea and turned it into a perfect adventure. Every transfer arrived on time and the private guides were simply phenomenal.”
+          </p>
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-neutral-200 flex items-center justify-center font-bold text-xs text-neutral-700">KR</div>
+<div>
+<p class="text-xs font-bold text-neutral-900">Kaitlyn R.</p>
+<p class="text-[11px] text-neutral-500">Family Trip in Kyoto</p>
+</div>
+</div>
+</div>
+<div class="p-6 bg-white rounded-2xl border border-neutral-200 shadow-sm">
+<div class="flex text-amber-500 mb-3 text-sm">
+            ★★★★★
+          </div>
+<p class="text-neutral-800 text-sm leading-relaxed italic mb-4">
+            “TravFrick isn’t just a booking service. It’s like having a travel-savvy best friend stationed worldwide!”
+          </p>
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-full bg-neutral-200 flex items-center justify-center font-bold text-xs text-neutral-700">RP</div>
+<div>
+<p class="text-xs font-bold text-neutral-900">Ravi P.</p>
+<p class="text-[11px] text-neutral-500">Solo Trek in Patagonia</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: TestimonialsSection -->
+<!-- BEGIN: FAQSection -->
+<section class="py-14 px-5 bg-white border-t border-[#f0ece1]" data-purpose="faq-accordion" id="faq">
+<div class="text-center space-y-3 mb-9">
+<span class="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+          Frequently Asked Questions
+        </span>
+<h2 class="brand-title text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight leading-snug">
+          Get Clarity Before Booking Your Next Adventure
+        </h2>
+<p class="text-neutral-600 text-xs max-w-xs mx-auto">
+          Find answers to common questions regarding bookings, itineraries, and services.
+        </p>
+</div>
+<!-- Expandable Accordion List -->
+<div class="space-y-3">
+<!-- FAQ 1 (Open by default) -->
+<details class="group bg-[#faf9f5] border border-neutral-200 rounded-2xl p-4 transition-all duration-200 open:shadow-sm" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-neutral-900 text-sm">
+<span>How do I book a trip with TravFrick?</span>
+<span class="text-neutral-500 font-normal text-lg group-open:rotate-45 transition-transform duration-200">✕</span>
+</summary>
+<p class="mt-3 text-neutral-600 text-xs leading-relaxed border-t border-neutral-200/60 pt-3">
+            Simply fill out our trip planner or contact our team directly. We'll tailor a travel plan just for you and handle the whole booking process once you're 100% satisfied with the itinerary.
+          </p>
+</details>
+<!-- FAQ 2 -->
+<details class="group bg-[#faf9f5] border border-neutral-200 rounded-2xl p-4 transition-all duration-200 open:shadow-sm">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-neutral-900 text-sm">
+<span>Can I customize my travel itinerary?</span>
+<span class="text-neutral-500 font-normal text-lg group-open:rotate-45 transition-transform duration-200">+</span>
+</summary>
+<p class="mt-3 text-neutral-600 text-xs leading-relaxed border-t border-neutral-200/60 pt-3">
+            Absolutely! Every trip is fully customized to match your tempo, personal interests, hotel tier preferences, and budget constraints.
+          </p>
+</details>
+<!-- FAQ 3 -->
+<details class="group bg-[#faf9f5] border border-neutral-200 rounded-2xl p-4 transition-all duration-200 open:shadow-sm">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-neutral-900 text-sm">
+<span>Is customer support available during the trip?</span>
+<span class="text-neutral-500 font-normal text-lg group-open:rotate-45 transition-transform duration-200">+</span>
+</summary>
+<p class="mt-3 text-neutral-600 text-xs leading-relaxed border-t border-neutral-200/60 pt-3">
+            Yes, our dedicated travel concierge support desk is on standby 24 hours a day, 7 days a week via WhatsApp, phone, and email to assist you in real time.
+          </p>
+</details>
+<!-- FAQ 4 -->
+<details class="group bg-[#faf9f5] border border-neutral-200 rounded-2xl p-4 transition-all duration-200 open:shadow-sm">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-neutral-900 text-sm">
+<span>Do you handle flight bookings too?</span>
+<span class="text-neutral-500 font-normal text-lg group-open:rotate-45 transition-transform duration-200">+</span>
+</summary>
+<p class="mt-3 text-neutral-600 text-xs leading-relaxed border-t border-neutral-200/60 pt-3">
+            Yes! We find the fastest and most convenient airfare routes with verified airlines, coordinating airport transfers directly to your hotel.
+          </p>
+</details>
+<!-- FAQ 5 -->
+<details class="group bg-[#faf9f5] border border-neutral-200 rounded-2xl p-4 transition-all duration-200 open:shadow-sm">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-neutral-900 text-sm">
+<span>Are there any hidden fees?</span>
+<span class="text-neutral-500 font-normal text-lg group-open:rotate-45 transition-transform duration-200">+</span>
+</summary>
+<p class="mt-3 text-neutral-600 text-xs leading-relaxed border-t border-neutral-200/60 pt-3">
+            No hidden costs. All prices, inclusions, taxes, and service fees are completely transparent in your personalized quotation before any payment is confirmed.
+          </p>
+</details>
+</div>
+</section>
+<!-- END: FAQSection -->
+<!-- BEGIN: BlogSection -->
+<section class="py-14 px-5 bg-[#faf9f5]" data-purpose="blog-highlights" id="blog">
+<div class="text-center space-y-3 mb-9">
+<span class="text-xs font-semibold uppercase tracking-wider text-neutral-500">
+          Travel Blog
+        </span>
+<h2 class="brand-title text-2xl sm:text-3xl font-bold text-neutral-900 tracking-tight leading-snug">
+          Explore Articles To Inspire And Plan Your Next Adventure
+        </h2>
+<p class="text-neutral-600 text-xs max-w-xs mx-auto">
+          Stay inspired with our travel guides, tips, and personal stories from our team of global experts.
+        </p>
+</div>
+<!-- Blog Posts Grid -->
+<div class="space-y-6">
+<!-- Post 1 -->
+<article class="bg-white rounded-2xl overflow-hidden border border-neutral-200/80 shadow-sm flex flex-col">
+<div class="h-44 relative overflow-hidden">
+<img alt="Scenic calm river gorge with boat" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1V40sX8_h2C6IMHfyeIt5KieLEBq7MicT3R8u5XDpihFre8xCb8Ri6C2a7VOg6KkFt6_3-QFOdSO-Wc82iX6XAoOoCp9Wb-7Ww41qNxw7KcVTqeXz9ADfzyay8kfv7neCC4cTl_OTXmkvtMoMh0OfPYtkpYH6iCXDKs7ojlUYAOuTZ7PCKMTDpkPMG_mZXjgF-WMWMW9rCRrzh8LF1gm6ZsRRGiehGj04VuB4Weuw"/>
+<span class="absolute top-3 left-3 bg-black/75 backdrop-blur-sm text-white text-[10px] font-semibold px-2.5 py-1 rounded-full">
+              January 13, 2025
+            </span>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<h3 class="font-bold text-base text-neutral-900 mb-2">
+              Solo Travel Tips For First-Timers
+            </h3>
+<a class="inline-flex items-center text-xs font-semibold text-neutral-900 hover:text-neutral-600" href="#">
+              Read More <span class="ml-1">→</span>
+</a>
+</div>
+</article>
+<!-- Post 2 -->
+<article class="bg-white rounded-2xl overflow-hidden border border-neutral-200/80 shadow-sm flex flex-col">
+<div class="h-44 relative overflow-hidden">
+<img alt="Backpack sitting by mountain lake" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1U6F8DOBFigviKPrjWODBNJ9Li6smscBQI8U93ZoxJgdkZJZACCgHq6tzX6k8xVtAuKweDo-kKk4xOrBBSRmX4oqh87D4eIx-czP04PiACYKCFGDt5ETPaKvlMug7RWZhsIvSdBeBNgoBZ5JY9YmEO8JkKgR1V67lQwCkhyX3l5h794tpDnfmhfXn81VpebetwAEBxKfCA6y-0B-f6VNPsfnuv3iaQJVicmZuK1UDo"/>
+<span class="absolute top-3 left-3 bg-black/75 backdrop-blur-sm text-white text-[10px] font-semibold px-2.5 py-1 rounded-full">
+              January 14, 2025
+            </span>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<h3 class="font-bold text-base text-neutral-900 mb-2">
+              Family Travel Hacks That Actually Work
+            </h3>
+<a class="inline-flex items-center text-xs font-semibold text-neutral-900 hover:text-neutral-600" href="#">
+              Read More <span class="ml-1">→</span>
+</a>
+</div>
+</article>
+<!-- Post 3 -->
+<article class="bg-white rounded-2xl overflow-hidden border border-neutral-200/80 shadow-sm flex flex-col">
+<div class="h-44 relative overflow-hidden">
+<img alt="Hiker standing high on mountain ledge" class="w-full h-full object-cover hover:scale-105 transition duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida/AEtjO1VJUjOD9hAGcWUaeEEshtTYIWV934J4kKFSzH9JnrBBIPRXsL-Dlkk-8iqhGKo-MFAxODLCdJjUoE5FQk398dxj2tqHEux9BC0XkgxRfTR4LG_xOZg0Mq9ZxJHsWsmZ5eDBTfb1beMYj_5A_-SuN7z51CdIMmUdCigyWwPTdUFE4V5ywjH1Cg1ueZLvbAI8xBVQtEE4ZysDij5PCha_GPGL4sVVLKSu2DKtDZVvPqc"/>
+<span class="absolute top-3 left-3 bg-black/75 backdrop-blur-sm text-white text-[10px] font-semibold px-2.5 py-1 rounded-full">
+              January 15, 2025
+            </span>
+</div>
+<div class="p-5 flex-1 flex flex-col justify-between">
+<h3 class="font-bold text-base text-neutral-900 mb-2">
+              The Ultimate Travel Checklist Before Your Next Adventure
+            </h3>
+<a class="inline-flex items-center text-xs font-semibold text-neutral-900 hover:text-neutral-600" href="#">
+              Read More <span class="ml-1">→</span>
+</a>
+</div>
+</article>
+</div>
+<!-- View All Button -->
+<div class="mt-8 text-center">
+<a class="inline-flex items-center justify-center px-7 py-3.5 bg-black text-white text-xs font-semibold rounded-full hover:bg-neutral-800 active:scale-95 transition" href="#">
+          View All Blogs
+        </a>
+</div>
+</section>
+<!-- END: BlogSection -->
+</main>
+<!-- BEGIN: Footer -->
+<footer class="bg-[#0b0b0b] text-neutral-400 py-16 px-6 border-t border-neutral-800">
+<div class="max-w-md mx-auto space-y-10">
+<!-- Brand & Socials -->
+<div class="space-y-4">
+<h2 class="brand-title text-3xl font-extrabold tracking-tight text-white">TRAVFRICK</h2>
+<div class="flex items-center space-x-3 pt-2">
+<!-- Facebook -->
+<a aria-label="Facebook" class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-neutral-200 transition" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<!-- X / Twitter -->
+<a aria-label="X" class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-neutral-200 transition" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<!-- LinkedIn -->
+<a aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-neutral-200 transition" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<!-- Instagram -->
+<a aria-label="Instagram" class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-neutral-200 transition" href="#">
+<svg class="w-4 h-4 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<!-- Links Grid -->
+<div class="grid grid-cols-2 gap-8 text-xs">
+<div>
+<h4 class="font-bold text-white mb-3 tracking-wider uppercase">Menu</h4>
+<ul class="space-y-2.5 text-neutral-400">
+<li><a class="hover:text-white transition" href="#">Home</a></li>
+<li><a class="hover:text-white transition" href="#about">About Us</a></li>
+<li><a class="hover:text-white transition" href="#services">Services</a></li>
+<li><a class="hover:text-white transition" href="#contact">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-white mb-3 tracking-wider uppercase">Services</h4>
+<ul class="space-y-2.5 text-neutral-400">
+<li><a class="hover:text-white transition" href="#services">Custom Trip Planning</a></li>
+<li><a class="hover:text-white transition" href="#services">Hotel &amp; Stay Booking</a></li>
+<li><a class="hover:text-white transition" href="#services">Flight Booking Assistance</a></li>
+<li><a class="hover:text-white transition" href="#services">Travel Insurance Coverage</a></li>
+<li><a class="hover:text-white transition" href="#services">24/7 Support Line</a></li>
+<li><a class="hover:text-white transition" href="#services">Guided Tours &amp; Activities</a></li>
+</ul>
+</div>
+</div>
+<!-- Direct Contact Info -->
+<div class="text-xs space-y-2 pt-2 border-t border-neutral-900" id="contact">
+<h4 class="font-bold text-white uppercase tracking-wider mb-2">Contact</h4>
+<p><span class="text-neutral-500">Email:</span> <a class="hover:text-white" href="mailto:info@travfrick.com">info@travfrick.com</a></p>
+<p><span class="text-neutral-500">Phone:</span> <a class="hover:text-white" href="tel:+15557895234">+1 (555) 789-5234</a></p>
+<p><span class="text-neutral-500">Address:</span> 42 Wanderlust Ave, New York, NY</p>
+</div>
+<!-- Newsletter Form -->
+<div class="pt-4 border-t border-neutral-900 space-y-3">
+<h4 class="font-bold text-white text-xs uppercase tracking-wider">Subscribe Newsletter</h4>
+<form class="space-y-2.5" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+<input class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-3.5 py-3 text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-white transition" placeholder="Enter email address" required="" type="email"/>
+<button class="w-full py-3 bg-white text-black text-xs font-bold rounded-lg hover:bg-neutral-200 active:scale-95 transition" type="submit">
+            Subscribe Now
+          </button>
+</form>
+</div>
+<!-- Bottom Copyright & Framer Tag -->
+<div class="pt-6 border-t border-neutral-900 flex flex-col items-center justify-center space-y-3 text-[11px] text-neutral-500">
+<div class="flex space-x-4">
+<a class="hover:text-neutral-400" href="#">Terms of Service</a>
+<span>•</span>
+<a class="hover:text-neutral-400" href="#">Privacy Policy</a>
+</div>
+<p>© 2025 TravFrick. All rights reserved.</p>
+<div class="inline-flex items-center space-x-1.5 px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-md text-[10px] text-neutral-400">
+<span>Made with passion for Framer</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="mobile-drawer">
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+
+      if (menuBtn && mobileNav) {
+        menuBtn.addEventListener('click', function() {
+          mobileNav.classList.toggle('hidden');
+        });
+
+        // Close nav when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.add('hidden');
+          });
+        });
+      }
+    });
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>
